@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Excecoes {
 
-    static void main(String[] args) {
+   /* static void main(String[] args) {
          try {
             int resultado = 10 / 0;
             System.out.println(resultado);
@@ -91,6 +91,9 @@ public class Excecoes {
         }
 
 
-    }
+
+
+}
+  */
 
 }
