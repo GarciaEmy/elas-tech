@@ -1,5 +1,4 @@
 package org.example.aula11;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,37 +6,83 @@ public class AulaHashMap {
 
     static void main(String[] args) {
 
-    /*..put("Ana", 28);
-        .get("Ana");
-        .getOrDefault("Zoe", 0);
-        .containsKey("Ana"); -- pode pesquisar por chave. ele testa se tem a chave no codigo e informa true ou false
-        .containsValue(28);
-        .remove("Ana");
-        .size();
-        .isEmpty();
-        .keySet();
-        .values();
-        putAll(Map.of())
-        */
+        Map<String, Integer> pessoas = new HashMap<>();
+
+        pessoas.put("Mariana" , 25);
+        pessoas.put("Gabriel" , 31);
+        pessoas.put("Lucas" , 19);
+
+        System.out.println("Mapa de pessoas: " + pessoas);
+
+        int idadeGabriel = pessoas.get("Gabriel");
+        System.out.println("A idade do Gabriel é: " + idadeGabriel);
 
 
-        HashMap<String, String> emails =  new HashMap<>();
+
+        Map<String, Double> produtos = new HashMap<>();
+
+        produtos.put("café", 5.00);
+
+        System.out.println("Mapa inicial: " + produtos);
+        System.out.println("Tamanho inicial: " + produtos.size());
+
+        produtos.put("café", 7.50);
+        System.out.println("após atualizar o preço: " + produtos);
+        System.out.println("Tamanho final: " + produtos.size());
 
 
-        // chaveeee        valorrr
-        emails.put("Ane", "ane@gmail.com");
-        emails.put("Paloma", "paloma@gmail.com");
-        emails.put("posicao 2", "qualquer coisa");
 
-        System.out.println(emails.get("Ane"));
-        System.out.println("posicao 2");
-        System.out.println("olá");
+        Map<String, String> agenda = new HashMap<>();
 
-        System.out.println(emails.getOrDefault("", "Posição Inválida"));
+        agenda.put("Mariana", "11 98765-4321");
+        agenda.put("Gabriel", "11 91234-5678");
 
-        System.out.println(emails.keySet());
-        System.out.println(emails.values());
-        System.out.println(emails.containsKey("Ane"));
+        String nomeBusca1 = "Mariana";
+        if (agenda.containsKey(nomeBusca1)) {
+            System.out.println("Telefone de " + nomeBusca1 + ": " + agenda.get(nomeBusca1));
+        } else {
+            System.out.println(nomeBusca1 + " não está na agenda.");
+        }
+
+        String nomeBusca2 = "Lucas";
+        if (agenda.containsKey(nomeBusca2)) {
+            System.out.println("Telefone de " + nomeBusca2 + ": " + agenda.get(nomeBusca2));
+        } else {
+            System.out.println(nomeBusca2 + " não está na agenda.");
+        }
+
+
+        Map<String, Integer> estoque = new HashMap<>();
+
+        // Adiciona dois itens
+        estoque.put("Caderno", 15);
+        estoque.put("Caneta", 50);
+
+        int qtdCaderno = estoque.getOrDefault("Caderno", 0);
+        System.out.println("Quantidade de Cadernos (getOrDefault): " + qtdCaderno);
+        int qtdBorracha = estoque.getOrDefault("Borracha", 0);
+        System.out.println("Quantidade de Borrachas (getOrDefault): " + qtdBorracha);
+
+        Integer qtdBorrachaGet = estoque.get("Borracha");
+        System.out.println("Quantidade de Borrachas (get normal): " + qtdBorrachaGet);
+
+
+
+        Map<String, Double> notas = new HashMap<>();
+
+        notas.put("Mariana", 9.5);
+        notas.put("Beatriz", 8.0);
+        notas.put("Camila", 7.5);
+
+        System.out.println("Mapa inicial: " + notas);
+        System.out.println("Tamanho inicial: " + notas.size());
+
+
+        notas.remove("Beatriz");
+        System.out.println(" após remoção: " + notas);
+        System.out.println("Tamanho atualizado: " + notas.size());
+    }
+
 
 
 
@@ -45,6 +90,3 @@ public class AulaHashMap {
     }
 
 
-
-
-}
